@@ -65,7 +65,7 @@
                 timeout: node.timeout, // Discovery should end after the specified timeout
                 resolve: false // Return discovered devices as data objects, instead of Cam instances
             };
-	    if(node.network) options.device = network;
+	    if(node.network) options.device = node.network;
             
             // For every discovery we will need to remove all previous ('device' and 'error') listeners, and add new listeners.
             // See https://discourse.nodered.org/t/object-property-becomes-undefined/50647/2?u=bartbutenaers

@@ -3,6 +3,8 @@ Node Red nodes for communicating with OnVif compliant IP devices
 
 **THIS IS AN EXPERIMENTAL NODE-RED CONTRIBUTION  !!!**
 
+*Update 14-03-2025: Added network adapter option to specify which network connection to use with Discovery *
+
 *Update 28-11-2020: I get frequently the question why I haven't published these nodes on NPM yet.*
 
 *Well the answer is very simple: a lack of free time...*
