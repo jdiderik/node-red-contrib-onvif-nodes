@@ -17,7 +17,8 @@
         defaults: {
             name: {value:""},
             timeout: {value:5},
-            separate: {value:true}
+            separate: {value:true},
+            network: {value:""},
         },        
         inputs:1,
         outputs:1,
@@ -38,6 +39,10 @@
         <input type="checkbox" id="node-input-separate" style="display: inline-block; width: auto; vertical-align: top;">
         <label for="node-input-separate" style="width: auto">Separate output message for each device</label>
     </div>
+    <div class="form-row">
+        <label for="node-input-network" style="width: auto"><i class="fa fa-network-wired"></i> Network adapter</label>
+        <input type="text" id="node-input-network" style="display: inline-block; width: auto; vertical-align: top;">
+    </div>
     <br>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
@@ -52,4 +57,6 @@
     The timeout is the number of seconds we will wait for OnVif devices to respond.  After the timeout interval, the broadcast will be considered completed.  Any device responses afterwards will be ignored.</p>
     <p><strong>Separate output message for each device:</strong><br/>
     When deselected a single output message will be generated, with <code>msg.payload</code> containing an array of available all devices. When deselected, a separate output message will be generated for every available device.</p>
+    <p><strong>Network device:</strong><br/>
+    Specify a specific network adapter to scan for devices.
 </script>
