@@ -21,6 +21,7 @@
         RED.nodes.createNode(this, config);
         this.timeout     = parseInt(config.timeout) * 1000; // Seconds
         this.separate    = config.separate;
+	this.network     = config.network;
         this.discovering = false;
 
         var node = this;
@@ -31,6 +32,7 @@
 		
             // Reduce the property depth
             probeMatch = result.probeMatches.probeMatch;
+	    probeMatch.raw = result;
                         
             // The result can be an array of strings, or a long (space separated) string.
             // In case of a long string, split it to an array of strings...
@@ -63,6 +65,7 @@
                 timeout: node.timeout, // Discovery should end after the specified timeout
                 resolve: false // Return discovered devices as data objects, instead of Cam instances
             };
+	    if(node.network) options.device = network;
             
             // For every discovery we will need to remove all previous ('device' and 'error') listeners, and add new listeners.
             // See https://discourse.nodered.org/t/object-property-becomes-undefined/50647/2?u=bartbutenaers
